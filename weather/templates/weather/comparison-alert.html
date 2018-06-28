@@ -5,11 +5,186 @@
 <head>
 	<title>Comparison - Alert!</title>
 	
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+ <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
 
 </head>
 <body>
 	<!-- your comparison interface with alert here -->
+   <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-11 text-center">
+         <h3>Interactive Weather Map</h3>
+    </div>
+    <div class="col-xs-1 text-center">
+     <button type="button active" class="btn btn-default center-block btn-lg"  onclick="location.href='/weather/search/'"> 
+      <img src="{% static 'weather/images/search.png' %}" class="img0"> </button>
+    </div> 
+    </div>
+    
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+function initMap() {
+  // The location of Berkeley
+  var berkeley = {lat: 37.8729059, lng: -122.2679374}; 
+  var sf = {lat: 37.757815, lng: -122.5076406};
+  var sacramento = {lat:38.5617255, lng: -121.582999};
+  var santarosa = {lat: 38.4356636, lng: -122.7735857};
+  
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 8, center: berkeley});
+  var marker = new google.maps.Marker({position: berkeley, map: map});
+  var marker = new google.maps.Marker({position: sf, map: map});
+  var marker = new google.maps.Marker({position: sacramento, map: map});
+  var marker = new google.maps.Marker({position: santarosa, map: map});
+
+}
+    </script>
+   
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdSkmesZ98SxCpGUTFpij_UACrelZI1aY&callback=initMap">
+    </script>
+  
+
+    <div class="row">
+      <div class="col-xs-12" style="padding-bottom:50px;">
+        <h2>
+          Thunderstorm!
+        </h2>
+        <h2>
+          Seek shelter!
+        </h2>
+      </div>
+      <div class="col-xs-12">
+        <h3>
+          Berkeley
+        </h3>
+      </div>
+        <div class="col-xs-2">
+          <h4>
+          55F 
+          </h4>
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2"> 
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+    
+         <div class="row">
+      <div class="col-xs-12">
+        <h3>
+          San Francisco
+        </h3>
+      </div>
+        <div class="col-xs-2">
+          <h4>
+          50F 
+          </h4>
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+    </div>
+     
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>
+          Santa Rosa
+        </h3>
+      </div>
+        <div class="col-xs-2">
+          <h4>
+          47F 
+          </h4>
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>
+          Sacramento
+        </h3>
+      </div>
+        <div class="col-xs-2">
+          <h4>
+          53F 
+          </h4>
+      </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+        <div class="col-xs-2">
+          <img src="{% static 'weather/images/thunderstorm.png' %}">
+        </div>
+
+    </div>
+    
+    
+    
+    
+
+    
+    
+    <div class="row" style="padding-top: 100px;">
+      <div class="col-xs-12">
+        <h4>
+          Ranked by <button type="button" class="btn btn-default left-block btn-lg"> extreme weather + location </button>
+        </h4>
+      </div>
+      
+    </div>
+    
+    
+    
+  
+  </div>
 </body>
 </html>

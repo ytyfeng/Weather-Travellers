@@ -13,5 +13,8 @@ def comparison(request):
 def comparison_alert(request):
     return render(request, 'weather/comparison-alert.html')
 
+def search(request):
+    return render(request, 'weather/search.html')
+  
 def index(request):
     return render(request, 'weather/index.html')
